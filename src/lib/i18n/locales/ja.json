@@ -6,30 +6,29 @@
       "votingList": "投票一覧",
       "myPage": "マイページ"
     },
-    "close": "閉じる"
+    "close": "閉じる",
+    "actions": "操作"
   },
   "voting": {
-    "title": "投票管理",
-    "add": "新規投票",
-    "list": {
-      "title": "投票一覧",
-      "table": {
-        "raceName": "レース名",
-        "horseNumber": "馬番",
-        "type": "券種",
-        "amount": "購入金額",
-        "odds": "オッズ",
-        "expectedPayout": "期待配当",
-        "actions": "操作"
-      }
-    },
-    "detail": {
-      "title": "投票詳細",
-      "button": "詳細"
-    },
-    "delete": {
-      "button": "削除",
-      "confirm": "この投票を削除しますか？"
+    "list_title": "投票一覧",
+    "add_title": "新規投票",
+    "delete_confirm": "この投票を削除しますか？",
+    "detail_title": "投票詳細",
+    "detail_button": "詳細",
+    "delete_button": "削除",
+    "item": {
+      "raceName": "レース名",
+      "horseNumber": "馬番",
+      "type": "券種",
+      "amount": "購入金額",
+      "odds": "オッズ",
+      "expectedPayout": "期待配当",
+      "buyMethod": "買い方",
+      "selection": "買い目",
+      "payout": "払戻金",
+      "profit": "利益",
+      "returnRate": "回収率",
+      "result": "結果"
     }
   }
 } 

@@ -21,13 +21,32 @@ amount: number;
 odds: number;
 };
 
+type BakenDetail = {
+  id: number;
+  raceName: string;
+  horseNumber: number;
+  type: string;
+  buyMethod: string;
+  selections: {
+    id: number;
+    horseNumbers: number[];
+    odds: number;
+    expectedPayout: number;
+    actualPayout: number;
+    result: 'win' | 'lose' | 'pending';
+  }[];
+  totalAmount: number;
+  totalPayout: number;
+  profit: number;
+};
+
 type Props = {
 data: Baken[];
 };
 
 export const BakenTable = ({ data }: Props) => {
   const { t, loading } = useTranslation();
-  const [selectedBaken, setSelectedBaken] = useState<Baken | null>(null);
+  const [selectedBaken, setSelectedBaken] = useState<BakenDetail | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (loading) {
@@ -35,7 +54,39 @@ export const BakenTable = ({ data }: Props) => {
   }
 
   const handleDetailClick = (baken: Baken) => {
-    setSelectedBaken(baken);
+    // ダミーの詳細データを作成
+    const detailData: BakenDetail = {
+      id: baken.id,
+      raceName: baken.raceName,
+      horseNumber: baken.horseNumber,
+      type: baken.type,
+      buyMethod: baken.type === '馬連' ? 'ながし' : '通常',
+      selections: [
+        {
+          id: 1,
+          horseNumbers: [baken.horseNumber, baken.horseNumber + 1],
+          odds: baken.odds,
+          expectedPayout: Math.floor(baken.amount * baken.odds),
+          actualPayout: Math.random() > 0.5 ? Math.floor(baken.amount * baken.odds) : 0,
+          result: (Math.random() > 0.5 ? 'win' : 'lose') as 'win' | 'lose' | 'pending',
+        },
+        ...(baken.type === '馬連' ? [
+          {
+            id: 2,
+            horseNumbers: [baken.horseNumber, baken.horseNumber + 2],
+            odds: baken.odds * 1.2,
+            expectedPayout: Math.floor(baken.amount * baken.odds * 1.2),
+            actualPayout: Math.random() > 0.7 ? Math.floor(baken.amount * baken.odds * 1.2) : 0,
+            result: (Math.random() > 0.7 ? 'win' : 'lose') as 'win' | 'lose' | 'pending',
+          }
+        ] : [])
+      ],
+      totalAmount: baken.amount,
+      totalPayout: Math.random() > 0.5 ? Math.floor(baken.amount * baken.odds) : 0,
+      profit: Math.random() > 0.5 ? Math.floor(baken.amount * baken.odds) - baken.amount : -baken.amount,
+    };
+    
+    setSelectedBaken(detailData);
     setIsModalOpen(true);
   };
 
@@ -57,20 +108,18 @@ export const BakenTable = ({ data }: Props) => {
         <Table>
           <TableHeader>
               <TableRow>
-              <TableHead className="min-w-[200px] text-base font-semibold">{t('voting.list.table.raceName')}</TableHead>
-              <TableHead className="min-w-[80px] text-base font-semibold">{t('voting.list.table.horseNumber')}</TableHead>
-              <TableHead className="min-w-[100px] text-base font-semibold">{t('voting.list.table.type')}</TableHead>
-              <TableHead className="min-w-[120px] text-base font-semibold">{t('voting.list.table.amount')}</TableHead>
-              <TableHead className="min-w-[80px] text-base font-semibold">{t('voting.list.table.odds')}</TableHead>
-              <TableHead className="min-w-[120px] text-base font-semibold">{t('voting.list.table.expectedPayout')}</TableHead>
-              <TableHead className="min-w-[150px] text-base font-semibold">{t('voting.list.table.actions')}</TableHead>
+              <TableHead className="min-w-[200px] text-base font-semibold">{t('voting.item.raceName')}</TableHead>
+              <TableHead className="min-w-[100px] text-base font-semibold">{t('voting.item.type')}</TableHead>
+              <TableHead className="min-w-[120px] text-base font-semibold">{t('voting.item.amount')}</TableHead>
+              <TableHead className="min-w-[80px] text-base font-semibold">{t('voting.item.odds')}</TableHead>
+              <TableHead className="min-w-[120px] text-base font-semibold">{t('voting.item.expectedPayout')}</TableHead>
+              <TableHead className="min-w-[150px] text-base font-semibold">{t('common.actions')}</TableHead>
               </TableRow>
           </TableHeader>
           <TableBody>
             {data.map((baken) => (
               <TableRow key={baken.id}>
                   <TableCell className="font-medium text-base">{baken.raceName}</TableCell>
-                  <TableCell className="text-base">{baken.horseNumber}</TableCell>
                   <TableCell className="text-base">{baken.type}</TableCell>
                   <TableCell className="text-base">¥{baken.amount.toLocaleString()}</TableCell>
                   <TableCell className="text-base">{baken.odds}</TableCell>
@@ -83,13 +132,13 @@ export const BakenTable = ({ data }: Props) => {
                         onClick={() => handleDetailClick(baken)}
                         className="px-5 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors text-base font-semibold shadow"
                       >
-                        {t('voting.detail.button')}
+                        {t('voting.detail_button')}
                       </button>
                       <button
                         onClick={() => handleDeleteClick(baken.id)}
                         className="px-5 py-2 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors text-base font-semibold shadow"
                       >
-                        {t('voting.delete.button')}
+                        {t('voting.delete_button')}
                       </button>
                     </div>
                   </TableCell>

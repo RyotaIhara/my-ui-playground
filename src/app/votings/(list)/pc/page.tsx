@@ -54,7 +54,7 @@ export default function BakenPagePC() {
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-gray-900">{t('voting.list.title')}</h1>
+      <h1 className="text-3xl font-bold mb-6 text-gray-900">{t('voting.list_title')}</h1>
       <div className="bg-white rounded-lg shadow-lg p-6">
         <BakenTable data={dummyData} />
       </div>

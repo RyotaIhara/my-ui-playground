@@ -10,6 +10,16 @@
   "voting": {
     "title": "投票管理",
     "add": "新規投票",
-    "list": "投票一覧"
+    "list": {
+      "title": "投票一覧",
+      "table": {
+        "raceName": "レース名",
+        "horseNumber": "馬番",
+        "type": "券種",
+        "amount": "購入金額",
+        "odds": "オッズ",
+        "expectedPayout": "期待配当"
+      }
+    }
   }
 } 

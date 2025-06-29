@@ -12,7 +12,17 @@ export interface TranslationKeys {
   voting: {
     title: string;
     add: string;
-    list: string;
+    list: {
+      title: string;
+      table: {
+        raceName: string;
+        horseNumber: string;
+        type: string;
+        amount: string;
+        odds: string;
+        expectedPayout: string;
+      };
+    };
   };
 }
 

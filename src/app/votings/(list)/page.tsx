@@ -1,4 +1,7 @@
+'use client';
+
 import { BakenTable } from "@/app/votings/components/BakenTable";
+import { useTranslation } from "@/lib/i18n/hooks";
 
 const dummyData = [
   {
@@ -20,9 +23,20 @@ const dummyData = [
 ];
 
 export default function BakenPage() {
+  const { t, loading } = useTranslation();
+
+  if (loading) {
+    return (
+      <div className="p-6">
+        <h1 className="text-2xl font-bold mb-4">Loading...</h1>
+        <div>Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">投票一覧</h1>
+      <h1 className="text-2xl font-bold mb-4">{t('voting.list.title')}</h1>
       <BakenTable data={dummyData} />
     </div>
   );

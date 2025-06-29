@@ -1,4 +1,6 @@
 // components/BakenTable.tsx
+'use client';
+
 import {
 Table,
 TableBody,
@@ -7,6 +9,7 @@ TableHead,
 TableHeader,
 TableRow,
 } from "@/shadcn/ui/table";
+import { useTranslation } from "@/lib/i18n/hooks";
 
 type Baken = {
 id: number;
@@ -22,16 +25,17 @@ data: Baken[];
 };
 
 export const BakenTable = ({ data }: Props) => {
+  const { t, loading } = useTranslation();
   return (
     <Table>
       <TableHeader>
           <TableRow>
-          <TableHead>レース名</TableHead>
-          <TableHead>馬番</TableHead>
-          <TableHead>券種</TableHead>
-          <TableHead>購入金額</TableHead>
-          <TableHead>オッズ</TableHead>
-          <TableHead>期待配当</TableHead>
+          <TableHead>{t('voting.list.table.raceName')}</TableHead>
+          <TableHead>{t('voting.list.table.horseNumber')}</TableHead>
+          <TableHead>{t('voting.list.table.type')}</TableHead>
+          <TableHead>{t('voting.list.table.amount')}</TableHead>
+          <TableHead>{t('voting.list.table.odds')}</TableHead>
+          <TableHead>{t('voting.list.table.expectedPayout')}</TableHead>
           </TableRow>
       </TableHeader>
       <TableBody>

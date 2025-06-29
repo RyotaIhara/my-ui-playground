@@ -28,28 +28,7 @@ export const BakenTable = ({ data }: Props) => {
 
   if (loading) {
     return (
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Loading...</TableHead>
-            <TableHead>Loading...</TableHead>
-            <TableHead>Loading...</TableHead>
-            <TableHead>Loading...</TableHead>
-            <TableHead>Loading...</TableHead>
-            <TableHead>Loading...</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow>
-            <TableCell>Loading...</TableCell>
-            <TableCell>Loading...</TableCell>
-            <TableCell>Loading...</TableCell>
-            <TableCell>Loading...</TableCell>
-            <TableCell>Loading...</TableCell>
-            <TableCell>Loading...</TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
+      <div>Loading...</div>
     );
   }
 

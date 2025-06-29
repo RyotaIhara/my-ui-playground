@@ -14,15 +14,12 @@ export const Navigation = () => {
 
   if (loading) {
     return (
-      <nav className="flex gap-2">
-        {navItems.map((item, index) => (
-          <div
-            key={index}
-            className="text-white px-2 py-2 rounded bg-white/10"
+      <nav className="py-2">
+        <div
+            className="px-4 py-3 text-white border-b border-gray-100"
           >
             Loading...
           </div>
-        ))}
       </nav>
     );
   }

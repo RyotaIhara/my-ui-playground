@@ -19,14 +19,11 @@ export const Navigation = ({ onItemClick }: NavigationProps) => {
   if (loading) {
     return (
       <nav className="py-2">
-        {navItems.map((item, index) => (
-          <div
-            key={index}
-            className="px-4 py-3 text-gray-700 border-b border-gray-100"
+        <div
+            className="px-4 py-3 text-white border-b border-gray-100"
           >
             Loading...
           </div>
-        ))}
       </nav>
     );
   }

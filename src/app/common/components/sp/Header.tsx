@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslation } from "@/lib/i18n/hooks";
-import { Navigation } from "./Navigation";
+import { Navigation } from "@/app/common/components/sp/Navigation";
 
 export const Header = () => {
   const { t, loading } = useTranslation();

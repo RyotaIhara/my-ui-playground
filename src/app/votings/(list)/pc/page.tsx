@@ -1,5 +1,4 @@
 import { BakenTable } from "@/app/votings/components/pc/BakenTable";
-import { useTranslation } from "@/lib/i18n/hooks";
 
 const dummyData = [
   {

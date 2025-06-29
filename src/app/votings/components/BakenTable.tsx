@@ -6,7 +6,7 @@ TableCell,
 TableHead,
 TableHeader,
 TableRow,
-} from "@/components/ui/table";
+} from "@/shadcn/ui/table";
 
 type Baken = {
 id: number;

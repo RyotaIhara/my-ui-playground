@@ -26,6 +26,10 @@ data: Baken[];
 
 export const BakenTable = ({ data }: Props) => {
   const { t, loading } = useTranslation();
+  if (loading) {
+    return;
+  }
+
   return (
     <Table>
       <TableHeader>

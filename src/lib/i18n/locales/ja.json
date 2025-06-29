@@ -5,7 +5,8 @@
       "home": "ホーム",
       "votingList": "投票一覧",
       "myPage": "マイページ"
-    }
+    },
+    "close": "閉じる"
   },
   "voting": {
     "title": "投票管理",
@@ -18,8 +19,17 @@
         "type": "券種",
         "amount": "購入金額",
         "odds": "オッズ",
-        "expectedPayout": "期待配当"
+        "expectedPayout": "期待配当",
+        "actions": "操作"
       }
+    },
+    "detail": {
+      "title": "投票詳細",
+      "button": "詳細"
+    },
+    "delete": {
+      "button": "削除",
+      "confirm": "この投票を削除しますか？"
     }
   }
 } 

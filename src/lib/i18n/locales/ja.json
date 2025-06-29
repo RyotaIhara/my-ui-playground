@@ -1,0 +1,15 @@
+{
+  "common": {
+    "appTitle": "馬券購入シミュレーター",
+    "navigation": {
+      "home": "ホーム",
+      "votingList": "投票一覧",
+      "myPage": "マイページ"
+    }
+  },
+  "voting": {
+    "title": "投票管理",
+    "add": "新規投票",
+    "list": "投票一覧"
+  }
+} 

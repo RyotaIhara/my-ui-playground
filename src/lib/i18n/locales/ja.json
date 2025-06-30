@@ -4,6 +4,7 @@
     "navigation": {
       "home": "ホーム",
       "votingList": "投票一覧",
+      "raceList": "レース一覧",
       "myPage": "マイページ"
     },
     "close": "閉じる",
@@ -30,6 +31,27 @@
       "profit": "利益",
       "returnRate": "回収率",
       "result": "結果"
+    }
+  },
+  "races": {
+    "list_title": "レース一覧",
+    "detail_title": "レース詳細",
+    "detail_button": "詳細",
+    "item": {
+      "raceNumber": "レース番号",
+      "startTime": "発走時刻",
+      "raceName": "レース名",
+      "weather": "天候／馬場"
+    },
+    "detail": {
+      "gateNumber": "枠番",
+      "horseNumber": "馬番",
+      "horseName": "馬名",
+      "sexAge": "性齢",
+      "weight": "負担重量",
+      "jockey": "騎手名",
+      "horseWeight": "馬体重",
+      "weightChange": "増減"
     }
   }
 } 

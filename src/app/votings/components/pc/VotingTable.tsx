@@ -107,14 +107,14 @@ export const VotingTable = ({ data }: Props) => {
       <div className="w-full overflow-x-auto">
         <Table>
           <TableHeader>
-              <TableRow>
+            <TableRow className="bg-blue-100">
               <TableHead className="min-w-[200px] text-base font-semibold">{t('voting.item.raceName')}</TableHead>
               <TableHead className="min-w-[100px] text-base font-semibold">{t('voting.item.type')}</TableHead>
               <TableHead className="min-w-[120px] text-base font-semibold">{t('voting.item.amount')}</TableHead>
               <TableHead className="min-w-[80px] text-base font-semibold">{t('voting.item.odds')}</TableHead>
               <TableHead className="min-w-[120px] text-base font-semibold">{t('voting.item.expectedPayout')}</TableHead>
               <TableHead className="min-w-[150px] text-base font-semibold">{t('common.actions')}</TableHead>
-              </TableRow>
+            </TableRow>
           </TableHeader>
           <TableBody>
             {data.map((voting) => (

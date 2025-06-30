@@ -3,4 +3,3 @@ export default function VotingAdd() {
       <h1>投票作成</h1>
     );
   }
-  

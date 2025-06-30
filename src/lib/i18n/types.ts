@@ -6,6 +6,7 @@ export interface TranslationKeys {
     navigation: {
       home: string;
       votingList: string;
+      raceList: string;
       myPage: string;
     };
   };

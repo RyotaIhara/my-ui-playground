@@ -3,12 +3,12 @@
 import { useTranslation } from "@/lib/i18n/hooks";
 
 type Voting = {
-  id: number;
-  raceName: string;
-  horseNumber: number;
-  type: string; // 単勝, 馬連, etc.
-  amount: number;
-  odds: number;
+id: number;
+raceName: string;
+horseNumber: number;
+type: string; // 単勝, 馬連, etc.
+amount: number;
+odds: number;
 };
 
 type Props = {

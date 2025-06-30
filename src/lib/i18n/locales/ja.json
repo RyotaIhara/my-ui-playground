@@ -12,10 +12,11 @@
   "voting": {
     "list_title": "投票一覧",
     "add_title": "新規投票",
-    "delete_confirm": "この投票を削除しますか？",
     "detail_title": "投票詳細",
+    "add_button": "投票を行う",
     "detail_button": "詳細",
     "delete_button": "削除",
+    "delete_confirm": "この投票を削除しますか？",
     "item": {
       "raceName": "レース名",
       "horseNumber": "馬番",

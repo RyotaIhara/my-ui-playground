@@ -1,14 +1,14 @@
 import { getDeviceType } from "@/lib/utils/device";
-import BakenPagePC from "./pc/page";
-import BakenPageSP from "./sp/page";
+import VotingsPagePC from "./pc/page";
+import VotingsPageSP from "./sp/page";
 
-export default async function BakenPage() {
+export default async function VotingsPage() {
   const deviceType = await getDeviceType();
   
   // モバイルまたはタブレットの場合はSP版、それ以外はPC版
   if (deviceType === 'mobile' || deviceType === 'tablet') {
-    return <BakenPageSP />;
+    return <VotingsPageSP />;
   }
   
-  return <BakenPagePC />;
+  return <VotingsPagePC />;
 }

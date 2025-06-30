@@ -2,19 +2,19 @@
 
 import { useTranslation } from "@/lib/i18n/hooks";
 
-type BakenDetail = {
+type VotingDetail = {
   id: number;
   raceName: string;
   horseNumber: number;
   type: string;
   buyMethod: string; // 通常, ながし, ボックス, フォーメーション
-  selections: BakenSelection[];
+  selections: VotingSelection[];
   totalAmount: number;
   totalPayout: number;
   profit: number;
 };
 
-type BakenSelection = {
+type VotingSelection = {
   id: number;
   horseNumbers: number[]; // 複数の馬番に対応
   odds: number;
@@ -24,15 +24,15 @@ type BakenSelection = {
 };
 
 type Props = {
-  baken: BakenDetail | null;
+  voting: VotingDetail | null;
   isOpen: boolean;
   onClose: () => void;
 };
 
-export const BakenDetailModal = ({ baken, isOpen, onClose }: Props) => {
+export const VotingDetailModal = ({ voting, isOpen, onClose }: Props) => {
   const { t, loading } = useTranslation();
   
-  if (loading || !baken) {
+  if (loading || !voting) {
     return null;
   }
 
@@ -93,28 +93,28 @@ export const BakenDetailModal = ({ baken, isOpen, onClose }: Props) => {
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 {t('voting.item.raceName')}
               </label>
-              <p className="text-lg text-gray-900 font-semibold">{baken.raceName}</p>
+              <p className="text-lg text-gray-900 font-semibold">{voting.raceName}</p>
             </div>
             
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 {t('voting.item.type')}
               </label>
-              <p className="text-lg text-gray-900 font-semibold">{baken.type}</p>
+              <p className="text-lg text-gray-900 font-semibold">{voting.type}</p>
             </div>
             
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 {t('voting.item.buyMethod')}
               </label>
-              <p className="text-lg text-gray-900 font-semibold">{baken.buyMethod}</p>
+              <p className="text-lg text-gray-900 font-semibold">{voting.buyMethod}</p>
             </div>
             
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 {t('voting.item.amount')}
               </label>
-              <p className="text-lg text-gray-900 font-semibold">¥{baken.totalAmount.toLocaleString()}</p>
+              <p className="text-lg text-gray-900 font-semibold">¥{voting.totalAmount.toLocaleString()}</p>
             </div>
           </div>
 
@@ -133,7 +133,7 @@ export const BakenDetailModal = ({ baken, isOpen, onClose }: Props) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {baken.selections.map((selection) => (
+                  {voting.selections.map((selection) => (
                     <tr key={selection.id} className="hover:bg-gray-50">
                       <td className="border border-gray-300 px-4 py-3">
                         <span className="font-medium">
@@ -168,7 +168,7 @@ export const BakenDetailModal = ({ baken, isOpen, onClose }: Props) => {
                 {t('voting.item.payout')}
               </label>
               <p className="text-xl font-semibold text-gray-900">
-                ¥{baken.totalPayout.toLocaleString()}
+                ¥{voting.totalPayout.toLocaleString()}
               </p>
             </div>
             
@@ -176,8 +176,8 @@ export const BakenDetailModal = ({ baken, isOpen, onClose }: Props) => {
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 {t('voting.item.profit')}
               </label>
-              <p className={`text-xl font-semibold ${baken.profit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                {formatProfit(baken.profit)}
+              <p className={`text-xl font-semibold ${voting.profit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                {formatProfit(voting.profit)}
               </p>
             </div>
             
@@ -185,8 +185,8 @@ export const BakenDetailModal = ({ baken, isOpen, onClose }: Props) => {
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 {t('voting.item.returnRate')}
               </label>
-              <p className={`text-xl font-semibold ${baken.profit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                {((baken.totalPayout / baken.totalAmount) * 100).toFixed(1)}%
+              <p className={`text-xl font-semibold ${voting.profit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                {((voting.totalPayout / voting.totalAmount) * 100).toFixed(1)}%
               </p>
             </div>
           </div>

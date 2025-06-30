@@ -1,7 +1,8 @@
 'use client';
 
-import { BakenTable } from "@/app/votings/components/pc/BakenTable";
+import { VotingTable } from "@/app/votings/components/pc/VotingTable";
 import { useTranslation } from "@/lib/i18n/hooks";
+import Link from "next/link";
 
 const dummyData = [
   {
@@ -46,7 +47,7 @@ const dummyData = [
   },
 ];
 
-export default function BakenPagePC() {
+export default function VotingsPagePC() {
   const { t, loading } = useTranslation();
   if (loading) {
     return;
@@ -56,7 +57,16 @@ export default function BakenPagePC() {
     <div className="p-6 max-w-7xl mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-gray-900">{t('voting.list_title')}</h1>
       <div className="bg-white rounded-lg shadow-lg p-6">
-        <BakenTable data={dummyData} />
+        <div className="flex justify-end mb-4">
+          <Link href="/votings/add">
+            <button
+              className="px-5 py-2 bg-yellow-400 text-white rounded-full hover:bg-yellow-500 transition-colors text-base font-semibold shadow"
+            >
+              {t('voting.add_button') || '新規作成'}
+            </button>
+          </Link>
+        </div>
+        <VotingTable data={dummyData} />
       </div>
     </div>
   );

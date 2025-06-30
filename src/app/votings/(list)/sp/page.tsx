@@ -1,6 +1,6 @@
 'use client';
 
-import { BakenTable } from "@/app/votings/components/sp/BakenTable";
+import { VotingTable } from "@/app/votings/components/sp/VotingTable";
 import { useTranslation } from "@/lib/i18n/hooks";
 
 const dummyData = [
@@ -22,13 +22,13 @@ const dummyData = [
   },
 ];
 
-export default function BakenPageSP() {
+export default function VotingsPageSP() {
   const { t, loading } = useTranslation();
 
   return (
     <div className="p-4">
       <h1 className="text-xl font-bold mb-4 text-gray-900">投票一覧</h1>
-      <BakenTable data={dummyData} />
+      <VotingTable data={dummyData} />
     </div>
   );
 } 

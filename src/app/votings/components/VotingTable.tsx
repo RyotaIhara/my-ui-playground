@@ -1,4 +1,4 @@
-// components/BakenTable.tsx
+// components/VotingTable.tsx
 'use client';
 
 import {
@@ -11,7 +11,7 @@ TableRow,
 } from "@/shadcn/ui/table";
 import { useTranslation } from "@/lib/i18n/hooks";
 
-type Baken = {
+type Voting = {
 id: number;
 raceName: string;
 horseNumber: number;
@@ -21,10 +21,10 @@ odds: number;
 };
 
 type Props = {
-data: Baken[];
+data: Voting[];
 };
 
-export const BakenTable = ({ data }: Props) => {
+export const VotingTable = ({ data }: Props) => {
   const { t, loading } = useTranslation();
   if (loading) {
     return;
@@ -43,15 +43,15 @@ export const BakenTable = ({ data }: Props) => {
           </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((baken) => (
-          <TableRow key={baken.id}>
-              <TableCell>{baken.raceName}</TableCell>
-              <TableCell>{baken.horseNumber}</TableCell>
-              <TableCell>{baken.type}</TableCell>
-              <TableCell>¥{baken.amount.toLocaleString()}</TableCell>
-              <TableCell>{baken.odds}</TableCell>
+        {data.map((voting) => (
+          <TableRow key={voting.id}>
+              <TableCell>{voting.raceName}</TableCell>
+              <TableCell>{voting.horseNumber}</TableCell>
+              <TableCell>{voting.type}</TableCell>
+              <TableCell>¥{voting.amount.toLocaleString()}</TableCell>
+              <TableCell>{voting.odds}</TableCell>
               <TableCell>
-              ¥{Math.floor(baken.amount * baken.odds).toLocaleString()}
+              ¥{Math.floor(voting.amount * voting.odds).toLocaleString()}
               </TableCell>
           </TableRow>
         ))}

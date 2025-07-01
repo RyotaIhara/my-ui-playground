@@ -98,7 +98,7 @@ export default function RaceDetailPage() {
             <button
               className="px-5 py-2 bg-yellow-400 text-white rounded-full hover:bg-yellow-500 transition-colors text-base font-semibold shadow"
             >
-              {t('voting.add_button') || '投票を行う'}
+              {t('voting.add_button')}
             </button>
           </Link>
         </div>

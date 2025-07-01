@@ -62,7 +62,7 @@ export default function VotingsPagePC() {
             <button
               className="px-5 py-2 bg-yellow-400 text-white rounded-full hover:bg-yellow-500 transition-colors text-base font-semibold shadow"
             >
-              {t('voting.add_button') || '新規作成'}
+              {t('voting.add_button')}
             </button>
           </Link>
         </div>

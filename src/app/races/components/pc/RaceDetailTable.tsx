@@ -47,14 +47,14 @@ export const RaceDetailTable = ({ data }: Props) => {
       <Table>
         <TableHeader>
           <TableRow className="bg-blue-100">
-            <TableHead className="min-w-[80px] text-base font-semibold">{t('races.detail.gateNumber') || '枠番'}</TableHead>
-            <TableHead className="min-w-[80px] text-base font-semibold">{t('races.detail.horseNumber') || '馬番'}</TableHead>
-            <TableHead className="min-w-[200px] text-base font-semibold">{t('races.detail.horseName') || '馬名'}</TableHead>
-            <TableHead className="min-w-[100px] text-base font-semibold">{t('races.detail.sexAge') || '性齢'}</TableHead>
-            <TableHead className="min-w-[120px] text-base font-semibold">{t('races.detail.weight') || '負担重量'}</TableHead>
-            <TableHead className="min-w-[120px] text-base font-semibold">{t('races.detail.jockey') || '騎手名'}</TableHead>
-            <TableHead className="min-w-[100px] text-base font-semibold">{t('races.detail.horseWeight') || '馬体重'}</TableHead>
-            <TableHead className="min-w-[100px] text-base font-semibold">{t('races.detail.weightChange') || '増減'}</TableHead>
+            <TableHead className="min-w-[80px] text-base font-semibold">{t('races.detail.gateNumber')}</TableHead>
+            <TableHead className="min-w-[80px] text-base font-semibold">{t('races.detail.horseNumber')}</TableHead>
+            <TableHead className="min-w-[200px] text-base font-semibold">{t('races.detail.horseName')}</TableHead>
+            <TableHead className="min-w-[100px] text-base font-semibold">{t('races.detail.sexAge')}</TableHead>
+            <TableHead className="min-w-[120px] text-base font-semibold">{t('races.detail.weight')}</TableHead>
+            <TableHead className="min-w-[120px] text-base font-semibold">{t('races.detail.jockey')}</TableHead>
+            <TableHead className="min-w-[100px] text-base font-semibold">{t('races.detail.horseWeight')}</TableHead>
+            <TableHead className="min-w-[100px] text-base font-semibold">{t('races.detail.weightChange')}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

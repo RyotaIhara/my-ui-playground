@@ -98,7 +98,7 @@ export default function RacesPagePC() {
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-gray-900">{t('races.list_title') || 'レース一覧'}</h1>
+      <h1 className="text-3xl font-bold mb-6 text-gray-900">{t('races.list_title')}</h1>
       
       <RaceTrackTabs 
         activeTrack={activeTrack}

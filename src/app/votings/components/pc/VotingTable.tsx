@@ -114,7 +114,7 @@ export const VotingTable = ({ data }: Props) => {
               <TableHead className="min-w-[80px] text-base font-semibold">{t('voting.item.odds')}</TableHead>
               <TableHead className="min-w-[120px] text-base font-semibold">{t('voting.item.expectedPayout')}</TableHead>
               <TableHead className="min-w-[150px] text-base font-semibold">{t('common.actions')}</TableHead>
-            </TableRow>
+              </TableRow>
           </TableHeader>
           <TableBody>
             {data.map((voting) => (

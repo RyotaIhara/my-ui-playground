@@ -1,6 +1,7 @@
 'use client';
 
 import { RaceDetailTable } from "@/app/races/components/pc/RaceDetailTable";
+import { RaceInfoHeader } from "@/app/votings/components/pc/RaceInfoHeader";
 import { useTranslation } from "@/lib/i18n/hooks";
 import { useParams } from "next/navigation";
 import Link from "next/link";
@@ -80,19 +81,20 @@ export default function RaceDetailPage() {
     return;
   }
 
+  const raceInfo = {
+    raceNumber: dummyRaceData.raceNumber,
+    raceName: dummyRaceData.raceName,
+    startTime: dummyRaceData.startTime,
+    weather: dummyRaceData.weather,
+    trackCondition: dummyRaceData.trackCondition,
+  };
+
   return (
     <div className="p-6 max-w-7xl mx-auto">
-      <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900">
-          {dummyRaceData.raceNumber}R {dummyRaceData.raceName}
-        </h1>
-        <p className="text-lg text-gray-600 mt-2">
-          {dummyRaceData.startTime} 発走 | {dummyRaceData.weather}／{dummyRaceData.trackCondition}
-        </p>
-      </div>
+      <RaceInfoHeader raceInfo={raceInfo} />
       <div className="bg-white rounded-lg shadow-lg p-6">
         <div className="flex justify-end mb-4">
-          <Link href="/votings/add">
+          <Link href={`/votings/add/${raceId}`}>
             <button
               className="px-5 py-2 bg-yellow-400 text-white rounded-full hover:bg-yellow-500 transition-colors text-base font-semibold shadow"
             >

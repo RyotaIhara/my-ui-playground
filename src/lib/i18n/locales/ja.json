@@ -31,6 +31,31 @@
       "profit": "利益",
       "returnRate": "回収率",
       "result": "結果"
+    },
+    "add": {
+      "gateNumber": "枠",
+      "horseNumber": "馬番",
+      "mark": "印",
+      "horseName": "馬名",
+      "selection": "選択",
+      "odds": "単勝オッズ",
+      "popularity": "人気",
+      "betType": {
+        "tansho": "単勝・複勝",
+        "fukusho": "複勝",
+        "wakuren": "枠連",
+        "umaren": "馬連",
+        "wide": "ワイド",
+        "umatan": "馬単",
+        "sanrenpuku": "3連複",
+        "sanrentan": "3連単"
+      },
+      "betMethod": {
+        "normal": "通常/フォーメーション",
+        "nagashi": "ながし",
+        "box": "ボックス"
+      },
+      "methodSelection": "方式選択"
     }
   },
   "races": {

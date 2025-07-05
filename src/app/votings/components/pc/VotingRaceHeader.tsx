@@ -44,6 +44,12 @@ export function VotingRaceHeader({
     router.push("/votings/add/1");
   };
 
+  // フォーム投票ボタン押下時の遷移
+  const handleFormVote = () => {
+    // 将来的にはここでAPI検索し、ID取得して遷移
+    router.push("/votings/form?targetDate=20250812&raceId=1&raceNumber=1");
+  };
+
   return (
     <div className="mb-6 flex flex-col items-center w-full">
       {/* 投票レースの変更ラベル（中央寄せ） */}
@@ -79,6 +85,12 @@ export function VotingRaceHeader({
           onClick={handleReflect}
         >
           反映
+        </button>
+        <button
+          className="ml-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors text-base font-semibold shadow"
+          onClick={handleFormVote}
+        >
+          フォーム投票
         </button>
       </div>
     </div>

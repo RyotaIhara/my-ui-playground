@@ -46,23 +46,23 @@ export default function RacesDefaultPC() {
       <DateSelector />
       <div className="flex gap-4 mt-6">
         {dummyVenues.map(venue => (
-          <Link 
-            key={venue.name} 
-            href="/races?targetDate=20250812"
-            className="flex-1 bg-gray-50 rounded-lg shadow p-4 hover:bg-gray-100 transition-colors cursor-pointer"
-          >
+          <div key={venue.name} className="flex-1 bg-gray-50 rounded-lg shadow p-4">
             <div className="font-bold mb-2">{venue.name}</div>
             <div className="text-sm mb-2">天気: {venue.weather} / 芝: {venue.turf} / ダ: {venue.dirt}</div>
             <div className="space-y-2">
               {venue.races.map(race => (
-                <div key={race.number} className="bg-white border rounded p-2 flex items-center">
+                <Link 
+                  key={race.number} 
+                  href="/races?targetDate=20250812"
+                  className="block bg-white border rounded p-2 flex items-center hover:bg-gray-50 transition-colors cursor-pointer"
+                >
                   <span className="bg-red-500 text-white font-bold rounded px-2 py-1 mr-2">{race.number}R</span>
                   <span className="font-semibold mr-2">{race.name}</span>
                   <span className="text-xs text-gray-500">{race.time} {race.distance} {race.horses}頭</span>
-                </div>
+                </Link>
               ))}
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>

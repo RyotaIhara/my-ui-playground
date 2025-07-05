@@ -15,6 +15,7 @@ import { VotingDetailModal } from "./VotingDetailModal";
 type Voting = {
 id: number;
 raceName: string;
+raceDate: string;
 horseNumber: number;
 type: string; // 単勝, 馬連, etc.
 amount: number;
@@ -108,6 +109,7 @@ export const VotingTable = ({ data }: Props) => {
         <Table>
           <TableHeader>
             <TableRow className="bg-blue-100">
+              <TableHead className="min-w-[120px] text-base font-semibold">{t('voting.search.raceDate')}</TableHead>
               <TableHead className="min-w-[200px] text-base font-semibold">{t('voting.item.raceName')}</TableHead>
               <TableHead className="min-w-[100px] text-base font-semibold">{t('voting.item.type')}</TableHead>
               <TableHead className="min-w-[120px] text-base font-semibold">{t('voting.item.amount')}</TableHead>
@@ -119,6 +121,7 @@ export const VotingTable = ({ data }: Props) => {
           <TableBody>
             {data.map((voting) => (
               <TableRow key={voting.id}>
+                  <TableCell className="text-base">{voting.raceDate}</TableCell>
                   <TableCell className="font-medium text-base">{voting.raceName}</TableCell>
                   <TableCell className="text-base">{voting.type}</TableCell>
                   <TableCell className="text-base">¥{voting.amount.toLocaleString()}</TableCell>

@@ -57,6 +57,23 @@
         "box": "ボックス"
       },
       "methodSelection": "方式選択"
+    },
+    "search": {
+      "title": "検索条件",
+      "raceDate": "レース日",
+      "raceName": "レース名",
+      "raceNamePlaceholder": "レース名を入力",
+      "votingType": "投票タイプ",
+      "allTypes": "すべて",
+      "single": "単勝",
+      "exacta": "馬連",
+      "trifecta": "三連複",
+      "trifectaExacta": "三連単",
+      "minAmount": "最小金額",
+      "maxAmount": "最大金額",
+      "searchButton": "検索",
+      "resetButton": "リセット",
+      "resultCount": "{{count}}件の投票が見つかりました"
     }
   },
   "races": {

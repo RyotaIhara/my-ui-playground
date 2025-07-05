@@ -1,10 +1,9 @@
-'use client';
-
-export default function RacesPageSP() {
+// src/app/races/(list)/sp/page.tsx など
+export default function RacesDefaultSP() {
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold mb-4 text-gray-900">レース一覧（SP版）</h1>
-      <p className="text-gray-600">SP版は未実装です。</p>
+    <div className="p-4 text-center">
+      <div className="text-lg font-bold">SP用: 日付を選択してください（MOC）</div>
+      {/* ここにSP用のデフォルトUIを将来的に実装 */}
     </div>
   );
-} 
+}

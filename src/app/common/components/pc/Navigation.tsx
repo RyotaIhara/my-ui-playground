@@ -5,6 +5,7 @@ import { useTranslation } from "@/lib/i18n/hooks";
 
 const navItems = [
   { nameKey: "common.navigation.home", href: "/" },
+  { nameKey: "common.navigation.dashboard", href: "/dashboard" },
   { nameKey: "common.navigation.votingList", href: "/votings" },
   { nameKey: "common.navigation.votingAdd", href: "/votings/add" },
   { nameKey: "common.navigation.raceList", href: "/races" },

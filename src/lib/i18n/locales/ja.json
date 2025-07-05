@@ -3,6 +3,7 @@
     "appTitle": "馬券購入シミュレーター",
     "navigation": {
       "home": "ホーム",
+      "dashboard": "ダッシュボード",
       "votingList": "投票一覧",
       "votingAdd": "投票を行う",
       "raceList": "レース一覧",

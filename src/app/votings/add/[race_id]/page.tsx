@@ -1,11 +1,10 @@
 'use client';
 
 import { VotingAddTable } from "@/app/votings/components/pc/VotingAddTable";
+import { VotingRaceHeader } from "@/app/votings/components/pc/VotingRaceHeader";
 import { RaceInfoHeader } from "@/app/votings/components/pc/RaceInfoHeader";
 import { useTranslation } from "@/lib/i18n/hooks";
-import { useParams } from "next/navigation";
 import { useState } from "react";
-import { RaceTrackTabs } from "@/app/races/components/pc/RaceTrackTabs";
 
 type BetType = 'tansho' | 'fukusho' | 'wakuren' | 'umaren' | 'wide' | 'umatan' | 'sanrenpuku' | 'sanrentan';
 type BetMethod = 'normal' | 'nagashi' | 'box';
@@ -64,8 +63,6 @@ const dummyRaceData = {
 
 export default function VotingAddPage() {
   const { t, loading } = useTranslation();
-  const params = useParams();
-  const raceId = params.race_id;
   const [selectedBetType, setSelectedBetType] = useState<BetType>('tansho');
   const [selectedBetMethod, setSelectedBetMethod] = useState<BetMethod>('normal');
   const [selectedHorses, setSelectedHorses] = useState<number[]>([]);
@@ -85,20 +82,20 @@ export default function VotingAddPage() {
   };
 
   const betTypeNames = {
-    tansho: t('voting.add.betType.tansho') || '単勝・複勝',
-    fukusho: t('voting.add.betType.fukusho') || '複勝',
-    wakuren: t('voting.add.betType.wakuren') || '枠連',
-    umaren: t('voting.add.betType.umaren') || '馬連',
-    wide: t('voting.add.betType.wide') || 'ワイド',
-    umatan: t('voting.add.betType.umatan') || '馬単',
-    sanrenpuku: t('voting.add.betType.sanrenpuku') || '3連複',
-    sanrentan: t('voting.add.betType.sanrentan') || '3連単',
+    tansho: t('voting.add.betType.tansho'),
+    fukusho: t('voting.add.betType.fukusho'),
+    wakuren: t('voting.add.betType.wakuren'),
+    umaren: t('voting.add.betType.umaren'),
+    wide: t('voting.add.betType.wide') ,
+    umatan: t('voting.add.betType.umatan'),
+    sanrenpuku: t('voting.add.betType.sanrenpuku'),
+    sanrentan: t('voting.add.betType.sanrentan'),
   };
 
   const betMethodNames = {
-    normal: t('voting.add.betMethod.normal') || '通常/フォーメーション',
-    nagashi: t('voting.add.betMethod.nagashi') || 'ながし',
-    box: t('voting.add.betMethod.box') || 'ボックス',
+    normal: t('voting.add.betMethod.normal'),
+    nagashi: t('voting.add.betMethod.nagashi'),
+    box: t('voting.add.betMethod.box'),
   };
 
   const handleHorseSelection = (horseId: number) => {
@@ -122,32 +119,7 @@ export default function VotingAddPage() {
   return (
     <div className="p-6 max-w-7xl mx-auto">
       {/* 上部：投票レースの変更ラベル、競馬場・レース番号セレクト、反映ボタン */}
-      <div className="flex items-center mb-4">
-        <span className="mr-4 text-base font-semibold text-gray-700">投票レースの変更</span>
-        <select
-          className="border border-gray-300 rounded px-3 py-2 text-base mr-2"
-          value={activeTrack}
-          onChange={e => setActiveTrack(e.target.value as RaceTrack)}
-        >
-          {tracks.map(track => (
-            <option key={track.value} value={track.value}>{track.label}</option>
-          ))}
-        </select>
-        <select
-          className="border border-gray-300 rounded px-3 py-2 text-base mr-2"
-          value={selectedRaceNumber}
-          onChange={e => setSelectedRaceNumber(Number(e.target.value))}
-        >
-          {raceNumbers.map(num => (
-            <option key={num} value={num}>{num}R</option>
-          ))}
-        </select>
-        <button
-          className="ml-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-base font-semibold shadow"
-        >
-          反映
-        </button>
-      </div>
+       <VotingRaceHeader />
       {/* 購入ページラベル */}
       <div className="mb-2">
         <span className="text-lg font-semibold text-blue-700">購入ページ</span>

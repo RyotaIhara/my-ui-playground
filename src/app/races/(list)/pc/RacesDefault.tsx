@@ -1,6 +1,7 @@
 'use client';
 
 import DateSelector from "@/app/common/components/DateSelector";
+import Link from "next/link";
 
 const dummyVenues = [
   {
@@ -45,7 +46,11 @@ export default function RacesDefaultPC() {
       <DateSelector />
       <div className="flex gap-4 mt-6">
         {dummyVenues.map(venue => (
-          <div key={venue.name} className="flex-1 bg-gray-50 rounded-lg shadow p-4">
+          <Link 
+            key={venue.name} 
+            href="/races?targetDate=20250812"
+            className="flex-1 bg-gray-50 rounded-lg shadow p-4 hover:bg-gray-100 transition-colors cursor-pointer"
+          >
             <div className="font-bold mb-2">{venue.name}</div>
             <div className="text-sm mb-2">天気: {venue.weather} / 芝: {venue.turf} / ダ: {venue.dirt}</div>
             <div className="space-y-2">
@@ -57,7 +62,7 @@ export default function RacesDefaultPC() {
                 </div>
               ))}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

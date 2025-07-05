@@ -4,6 +4,7 @@
     "navigation": {
       "home": "ホーム",
       "votingList": "投票一覧",
+      "votingAdd": "投票を行う",
       "raceList": "レース一覧",
       "myPage": "マイページ"
     },

@@ -1,3 +1,5 @@
+'use client';
+
 // src/app/races/(list)/sp/page.tsx など
 export default function RacesDefaultSP() {
   return (
